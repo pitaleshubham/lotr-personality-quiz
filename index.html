@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lord of the Rings Personality Quiz</title>
+    <link rel="stylesheet" href="style.css?v=3">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-overlay"></div>
+    <main class="quiz-container">
+        <header>
+            <h1>Which Lord of the Rings Character Are You?</h1>
+        </header>
+
+        <!-- Intro Screen -->
+        <section id="intro-screen" class="view active">
+            <p>Embark on a journey to discover your true nature in Middle-earth. Your choices will determine your path.
+            </p>
+            <button id="start-btn" class="primary-btn">Begin Journey</button>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quiz-screen" class="view">
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <p id="progress-text" class="progress-text">Question 1 of 12</p>
+
+            <h2 id="question-text">Question text goes here</h2>
+
+            <div id="options-container" class="options-container">
+                <!-- Options injected by JS -->
+            </div>
+        </section>
+
+        <!-- Result Screen -->
+        <section id="result-screen" class="view">
+            <h2>Your Journey Ends Here</h2>
+            <div id="character-result" class="character-name">Character Name</div>
+            <p id="character-desc" class="character-description">Description goes here</p>
+
+            <div id="debug-scores" class="debug-scores hidden">
+                <h3>Debug - Final Scores:</h3>
+                <p>Power (P): <span id="score-p"></span></p>
+                <p>Strategy (S): <span id="score-s"></span></p>
+                <p>Attachment (A): <span id="score-a"></span></p>
+                <p>Impulse (I): <span id="score-i"></span></p>
+            </div>
+
+            <button id="restart-btn" class="primary-btn">Begin Anew</button>
+        </section>
+    </main>
+
+    <script src="script.js?v=3"></script>
+</body>
+
+</html>
