@@ -201,10 +201,20 @@
       btn.addEventListener('click', () => handleAnswer(option.score));
       optionsContainer.appendChild(btn);
     });
+
+    // Ensure no option button is auto-focused after rendering
+    if (document.activeElement) {
+      document.activeElement.blur();
+    }
   }
 
   // Handle Answer Logic
   function handleAnswer(scoreObj) {
+    // Explicitly blur the active element to prevent mobile focus retention
+    if (document.activeElement) {
+      document.activeElement.blur();
+    }
+
     // Disable all buttons to prevent double clicking during transition
     const buttons = optionsContainer.querySelectorAll('.option-btn');
     buttons.forEach(btn => btn.disabled = true);

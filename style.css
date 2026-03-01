@@ -172,6 +172,7 @@ h2 {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .option-btn::before {
@@ -191,14 +192,26 @@ h2 {
     z-index: 1;
 }
 
-.option-btn:hover {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
-    background: rgba(255, 255, 255, 0.08);
+/* Safe CSS adjustments to prevent unwanted :focus and :active styling on mobile */
+.option-btn:focus:not(:focus-visible) {
+    outline: none;
 }
 
-.option-btn:hover::before {
-    width: 100%;
+.option-btn:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
+}
+
+@media (hover: hover) {
+    .option-btn:hover {
+        border-color: var(--accent-color);
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .option-btn:hover::before {
+        width: 100%;
+    }
 }
 
 .option-btn:disabled {
